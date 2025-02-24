@@ -584,3 +584,10 @@ section,
 	margin-top: 6px;
 	font-size: 13px;
 }
+
+.bg-nama{
+	background:url(../images/vector.png);
+}
+.p-sholat{
+	margin-top: -10px!important;
+}
