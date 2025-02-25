@@ -9,8 +9,8 @@
 :root { 
 	--background-color: #ffffff; /* Background color for the entire website, including individual sections */
 	--default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-	--heading-color: #040677; /* Color for headings, subheadings and title throughout the website */
-	--accent-color: #1acc8d; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+	--heading-color: #1acc8d; /* Color for headings, subheadings and title throughout the website */
+	--accent-color: #040677; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
 	--surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
 	--contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -118,10 +118,10 @@ h6 {
 
 .garis::before,
 .garis::after{
-	background-color: #3b71ca;
+	background-color: #1acc8d;
 	content: "";
 	display: inline-block;
-	height: 1px;
+	height: 2px;
 	position: relative;
 	vertical-align: middle;
 	width: 60%;
@@ -169,12 +169,6 @@ h6 {
 		transform: translateX(-100%);
 	}
 }
-
-/* Optional: Pause animation on hover */
-.marquee-container:hover .marquee-content {
-	animation-play-state: paused;
-}
-
 
 /*--------------------------------------------------------------
 # Stats Section
@@ -272,12 +266,13 @@ h6 {
 }
 
 .features .features-item:hover {
-	border-color: var(--accent-color);
+	border-color: var(--heading-color);
 	box-shadow: 0px 2px 35px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
 }
 
 .features .features-item:hover h3 a {
-	color: var(--accent-color);
+	color: var(--heading-color);
 }
 
 
@@ -285,104 +280,10 @@ h6 {
 /*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/
-.faq .content h3 {
-	font-weight: 400;
-	font-size: 34px;
+.accordion-button:not(.collapsed) {
+	color: var(--heading-color)!important;
+	background-color: var(--bs-accordion-active-bg);
 }
-
-.faq .content p {
-	color: color-mix(in srgb, var(--default-color), transparent 30%);
-}
-
-.faq .faq-container {
-	margin-top: 15px;
-}
-
-.faq .faq-container .faq-item {
-	background-color: var(--surface-color);
-	position: relative;
-	padding: 20px;
-	margin-bottom: 20px;
-	box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
-	overflow: hidden;
-}
-
-.faq .faq-container .faq-item:last-child {
-	margin-bottom: 0;
-}
-
-.faq .faq-container .faq-item h3 {
-	font-weight: 600;
-	font-size: 17px;
-	line-height: 24px;
-	margin: 0 30px 0 32px;
-	transition: 0.3s;
-	cursor: pointer;
-}
-
-.faq .faq-container .faq-item h3 span {
-	color: var(--accent-color);
-	padding-right: 5px;
-}
-
-.faq .faq-container .faq-item h3:hover {
-	color: var(--accent-color);
-}
-
-.faq .faq-container .faq-item .faq-content {
-	display: grid;
-	grid-template-rows: 0fr;
-	transition: 0.3s ease-in-out;
-	visibility: hidden;
-	opacity: 0;
-}
-
-.faq .faq-container .faq-item .faq-content p {
-	margin-bottom: 0;
-	overflow: hidden;
-}
-
-.faq .faq-container .faq-item .faq-icon {
-	position: absolute;
-	top: 22px;
-	left: 20px;
-	font-size: 22px;
-	line-height: 0;
-	transition: 0.3s;
-	color: var(--accent-color);
-}
-
-.faq .faq-container .faq-item .faq-toggle {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	font-size: 16px;
-	line-height: 0;
-	transition: 0.3s;
-	cursor: pointer;
-}
-
-.faq .faq-container .faq-item .faq-toggle:hover {
-	color: var(--accent-color);
-}
-
-.faq .faq-container .faq-active h3 {
-	color: var(--accent-color);
-}
-
-.faq .faq-container .faq-active .faq-content {
-	grid-template-rows: 1fr;
-	visibility: visible;
-	opacity: 1;
-	padding-top: 10px;
-}
-
-.faq .faq-container .faq-active .faq-toggle {
-	transform: rotate(90deg);
-	color: var(--accent-color);
-}
-
-
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
@@ -498,7 +399,7 @@ section,
 }
 
 .contact .info-item i {
-	color: var(--accent-color);
+	color: var(--heading-color);
 	background: color-mix(in srgb, var(--accent-color), transparent 92%);
 	font-size: 20px;
 	width: 44px;
@@ -525,7 +426,7 @@ section,
 }
 
 .contact .info-item:hover i {
-	background: var(--accent-color);
+	background: var(--heading-color);
 	color: var(--contrast-color);
 }
 
@@ -542,7 +443,7 @@ section,
 	border-radius: 0;
 	color: var(--default-color);
 	background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-	border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+	border-color: color-mix(in srgb, var(--heading-color), transparent 80%);
 }
 
 .contact .php-email-form input[type=text]:focus,
@@ -554,12 +455,12 @@ section,
 .contact .php-email-form input[type=text]::placeholder,
 .contact .php-email-form input[type=email]::placeholder,
 .contact .php-email-form textarea::placeholder {
-	color: color-mix(in srgb, var(--default-color), transparent 70%);
+	color: color-mix(in srgb, var(--heading-color), transparent 70%);
 }
 
 .contact .php-email-form button[type=submit] {
 	color: var(--contrast-color);
-	background: var(--accent-color);
+	background: var(--heading-color);
 	border: 0;
 	padding: 10px 30px;
 	transition: 0.4s;
