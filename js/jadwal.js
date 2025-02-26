@@ -7,21 +7,20 @@ function bulan(){
 	if(getMont < 10 ){
 		bulan = `0${getMont}`;
 	}else{
-		bulan = getMont
+		bulan = getMonth
 	}
 	return bulan
 }
 
 function hari(){
 	if (getDay < 10){
-		hari = `0${getDay}`;
+		hari = `0${getDate}`;
 	}else {
 		hari = getDay;
 	}
 	return hari;
 }
 const tanggal = `${getYear}-${bulan()}-${hari()}`;
-
 
 function getJadwalSholat() {
 	fetch('https://api.myquran.com/v2/sholat/jadwal/0809/' + tanggal)
