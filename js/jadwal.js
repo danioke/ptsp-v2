@@ -27,6 +27,7 @@ function getJadwalSholat() {
 	.then(res => res.json())
 	.then ( data => {
 		const jadwal = data.data.jadwal
+		document.getElementById('imsyak').textContent = jadwal.imsyak
 		document.getElementById('subuh').textContent = jadwal.subuh
 		document.getElementById('dzuhur').textContent = jadwal.dzuhur
 		document.getElementById('ashar').textContent = jadwal.ashar
